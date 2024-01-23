@@ -9,10 +9,10 @@ let botonSiguientePagina = document.getElementById('siguientePagina');
 let botonPrimeraPagina = document.getElementById('primeraPagina');
 let botonAnteriorPagina = document.getElementById('anteriorPagina');
 let botonUltimaPagina = document.getElementById('ultimaPagina');
-let informacionDePersonajesPorPagina = document.getElementById("personajesEnEstaPagina");
+
 
 // Mis Variables
-let personajesEnEstaPagina = 20
+let personajesEnEstaPagina = 20;
 let totalPersonajes = 0;
 let paginaActual = 1;
 
@@ -40,12 +40,19 @@ function pedidoFetch(pagina) {
     }).then((data)=>{
         totalPersonajes = data.results;
         mostrarEnElHtml(totalPersonajes); 
+    }).then((data)=>{
+        totalPersonajes = data.info.count;
+        totalPersonajes = personajesEnEstaPagina;
+        personajesEnEstaPagina.innerHTML += `<p id="personajesEnEstaPagina"> ${personajesEnEstaPagina} </p>`;
     })
 }
 
 pedidoFetch(1);
 
 
+function contarPersonajes(totalPersonajes) {
+    
+}
 // Funciones para los filtros
 function filtroSinGenero () {
     let sinGenero = totalPersonajes.filter((itemPersonajes)=>{
