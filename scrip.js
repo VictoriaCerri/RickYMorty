@@ -9,7 +9,7 @@ let botonSiguientePagina = document.getElementById('siguientePagina');
 let botonPrimeraPagina = document.getElementById('primeraPagina');
 let botonAnteriorPagina = document.getElementById('anteriorPagina');
 let botonUltimaPagina = document.getElementById('ultimaPagina');
-
+let personajesEnEstaPagina = document.getElementById('personajesEnEstaPagina')
 
 // Mis Variables
 let personajesEnEstaPagina = 0;
