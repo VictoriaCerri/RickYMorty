@@ -12,7 +12,7 @@ let botonUltimaPagina = document.getElementById('ultimaPagina');
 
 
 // Mis Variables
-let personajesEnEstaPagina = 20;
+let personajesEnEstaPagina = 0;
 let totalPersonajes = 0;
 let paginaActual = 1;
 
@@ -42,17 +42,13 @@ function pedidoFetch(pagina) {
         mostrarEnElHtml(totalPersonajes); 
     }).then((data)=>{
         totalPersonajes = data.info.count;
-        totalPersonajes = personajesEnEstaPagina;
+        totalPersonajes += personajesEnEstaPagina;
         personajesEnEstaPagina.innerHTML += `<p id="personajesEnEstaPagina"> ${personajesEnEstaPagina} </p>`;
     })
 }
 
 pedidoFetch(1);
 
-
-function contarPersonajes(totalPersonajes) {
-    
-}
 // Funciones para los filtros
 function filtroSinGenero () {
     let sinGenero = totalPersonajes.filter((itemPersonajes)=>{
