@@ -46,10 +46,6 @@ function pedidoFetch(pagina) {
 
 pedidoFetch(1);
 
-
-function contarPersonajes(totalPersonajes) {
-    
-}
 // Funciones para los filtros
 function filtroSinGenero () {
     let sinGenero = totalPersonajes.filter((itemPersonajes)=>{
