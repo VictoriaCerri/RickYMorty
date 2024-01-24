@@ -18,7 +18,6 @@ let paginaActual = 1;
 
 // Funcion para mostrar los personajes
 function mostrarEnElHtml(arrPersonajes) {
-    personajesEnEstaPagina.innerHTML =`Personajes en esta pagina : ${arrPersonajes.length}`
     divPersonajes.innerHTML='';
     arrPersonajes.forEach((itemPersonajes)=>{
         divPersonajes.innerHTML+=`<div class="personaje">
@@ -31,6 +30,7 @@ function mostrarEnElHtml(arrPersonajes) {
                                     <p>Origen: ${itemPersonajes.origin.name}</p>
                                     </div>`
     })
+    personajesEnEstaPagina.innerHTML =`Personajes en esta pagina : ${arrPersonajes.length}`;
 }
 
 // PEDIDO DE FETCH
