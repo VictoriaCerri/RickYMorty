@@ -9,15 +9,16 @@ let botonSiguientePagina = document.getElementById('siguientePagina');
 let botonPrimeraPagina = document.getElementById('primeraPagina');
 let botonAnteriorPagina = document.getElementById('anteriorPagina');
 let botonUltimaPagina = document.getElementById('ultimaPagina');
-
+let personajesEnEstaPagina = document.getElementById('personajesEnEstaPagina')
 
 // Mis Variables
-let personajesEnEstaPagina = 20;
+
 let totalPersonajes = 0;
 let paginaActual = 1;
 
 // Funcion para mostrar los personajes
 function mostrarEnElHtml(arrPersonajes) {
+    personajesEnEstaPagina.innerHTML =`Personajes en esta pagina : ${arrPersonajes.length}`
     divPersonajes.innerHTML='';
     arrPersonajes.forEach((itemPersonajes)=>{
         divPersonajes.innerHTML+=`<div class="personaje">
@@ -40,10 +41,6 @@ function pedidoFetch(pagina) {
     }).then((data)=>{
         totalPersonajes = data.results;
         mostrarEnElHtml(totalPersonajes); 
-    }).then((data)=>{
-        totalPersonajes = data.info.count;
-        totalPersonajes = personajesEnEstaPagina;
-        personajesEnEstaPagina.innerHTML += `<p id="personajesEnEstaPagina"> ${personajesEnEstaPagina} </p>`;
     })
 }
 
